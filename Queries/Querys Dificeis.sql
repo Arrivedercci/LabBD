@@ -9,9 +9,9 @@ SELECT MUN.nome_municipio,
         FROM TB_FAMILIA FAM2
         WHERE FAM2.cd_ibge = MUN.cd_ibge) AS renda_media
 FROM TB_PESSOA PSA
-JOIN TB_FAMILIA FAM ON PSA.id_familia = FAM.id_familia
-JOIN TB_MUN MUN ON FAM.cd_ibge = MUN.cd_ibge
-JOIN TB_TRAB TRAB ON PSA.id_pessoa = TRAB.id_pessoa
+INNER JOIN TB_FAMILIA FAM ON PSA.id_familia = FAM.id_familia
+INNER JOIN TB_MUN MUN ON FAM.cd_ibge = MUN.cd_ibge
+INNER JOIN TB_TRAB TRAB ON PSA.id_pessoa = TRAB.id_pessoa
 WHERE TRAB.cod_principal_trab_memb IN (4, 6, 8, 9, 10, 11)
 GROUP BY MUN.nome_municipio, MUN.cd_ibge
 ORDER BY MUN.nome_municipio;
