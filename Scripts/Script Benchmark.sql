@@ -7,7 +7,7 @@ BEGIN
     FOR i IN 1..10 LOOP
         start_time := clock_timestamp();
         EXECUTE '
-        
+
         SELECT COUNT(DISTINCT id_pessoa)
         FROM TB_ESC
         WHERE ind_frequenta_escola_memb = 1;
@@ -136,7 +136,7 @@ BEGIN
         LEFT JOIN TB_FAMILIA FAM ON DOM.id_familia = FAM.id_familia
         LEFT JOIN TB_MUN MUN ON FAM.cd_ibge = MUN.cd_ibge
         GROUP BY MUN.nome_municipio, MUN.cd_ibge
-        ORDER BY agua_encanada DESC;
+        ORDER BY agua_encanada DESC;';
 
         end_time := clock_timestamp();
         RAISE NOTICE 'Query Index 2, Iteração %: Tempo de execução = %', i, end_time - start_time;
