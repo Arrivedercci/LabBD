@@ -144,6 +144,6 @@ BEGIN
 
 
         end_time := clock_timestamp();
-        RAISE NOTICE 'Query Index 2, Iteração %: Tempo de execução = %', i, end_time - start_time;
+        RAISE NOTICE 'Query Index 1, Iteração %: Tempo de execução = %', i, end_time - start_time;
     END LOOP;
 END $$;
